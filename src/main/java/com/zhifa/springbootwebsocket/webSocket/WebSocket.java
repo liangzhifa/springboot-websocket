@@ -45,6 +45,10 @@ public class WebSocket {
 
     @OnOpen
     public void OnOpen(Session session, @PathParam(value = "name") String name) {
+        /*
+        *
+        * 每次进来都会生成一个新的this对象 有着不同的session
+        * */
         this.session = session;
         this.name = name;
         // name是用来表示唯一客户端，如果需要指定发送，需要指定发送通过name来区分
